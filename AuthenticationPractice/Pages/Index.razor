@@ -4,4 +4,18 @@
 
 Welcome to your new app.
 
-<SurveyPrompt Title="How is Blazor working for you?" />
+
+<AuthorizeView>
+    <NotAuthorized>
+        <h3 class="text-danger">Please log in.</h3>
+    </NotAuthorized>
+    <Authorized>
+        <h3 class="text-primary">Thank you for logging in.</h3>
+    </Authorized>
+</AuthorizeView>
+
+<AuthorizeView Roles="Administrator">
+    <Authorized>
+        <h4>Logged in with administrator privileges.</h4>
+    </Authorized>
+</AuthorizeView>
